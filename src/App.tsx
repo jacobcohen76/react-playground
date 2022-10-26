@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Counter from './components/counter'
-import HelloWorld from './components/hello-world'
+import Counter from './components/Counter'
+import HelloWorld from './components/HelloWorld'
 
 function App() {
   const [count, setCount] = useState(0)

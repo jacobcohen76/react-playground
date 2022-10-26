@@ -1,7 +1,6 @@
-import React from 'react'
 import styles from 'styles.module.css'
 
-const HelloWorld: React.FC = () => {
+const HelloWorld = () => {
   return (
     <div>Hello, World!</div>
   )
