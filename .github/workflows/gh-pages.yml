@@ -39,7 +39,7 @@ jobs:
       - name: Build Project
         run: yarn run build
 
-      - name: Upload production-ready build files
+      - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: production-files
@@ -67,7 +67,7 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Upload artifact
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
           name: production-files
