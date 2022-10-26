@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Counter from './components/Counter'
-import HelloWorld from './components/HelloWorld'
+import Counter from '../Counter'
+import HelloWorld from '../HelloWorld'
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0)
 
   return (
