@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Setup Node
@@ -34,11 +34,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-
-      - name: Build project
-        run: npm run build
+      - name: Build Project
+        run: yarn run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
@@ -47,6 +44,7 @@ jobs:
           path: ./dist
 
   deploy:
+    name: Deploy
     needs: build
     environment:
       name: github-pages
@@ -55,19 +53,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
-      - name: Download artifact
+
+      - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
           name: production-files
           path: ./dist
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
           name: production-files
           path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
