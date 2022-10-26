@@ -70,7 +70,6 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          name: production-files
           path: './dist'
 
       - name: Deploy to GitHub Pages
